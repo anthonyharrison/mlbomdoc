@@ -1,7 +1,7 @@
 # MLBOMDoc
 
-MLBOMDOC is a human-readable document generator for a ML-BOM (ML Bill of Materials). MLBOMs document a Machine Learning model components
-which are tyopically contained within an SBOM (Software Bill of Materials). MLBOMS are supported for CycloneDX](https://www.cyclonedx.org).
+MLBOMDOC is a human-readable document generator for an ML-BOM (ML Bill of Materials). MLBOMs document Machine Learning model components
+which are typically contained within an SBOM (Software Bill of Materials). MLBOMs are supported for CycloneDX](https://www.cyclonedx.org).
 
 ## Installation
 
