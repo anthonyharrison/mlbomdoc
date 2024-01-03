@@ -132,7 +132,7 @@ def generate_document(format, sbom_parser, filename, outfile):
                             sbom_document.createtable(["Name", "Content"])
                             for image in dataset["graphics"]["collection"]:
                                 sbom_document.addrow([image[0], image[1]])
-                            sbom_document.showtable()
+                            sbom_document.showtable(widths=[5, 9])
 
                         # Governance
                         title = False
@@ -185,7 +185,7 @@ def generate_document(format, sbom_parser, filename, outfile):
                                     ]
                                 )
                         if title:
-                            sbom_document.showtable()
+                            sbom_document.showtable(widths=[4, 5, 5])
 
                     # Quantitative Analysis
                     title = False
@@ -195,7 +195,7 @@ def generate_document(format, sbom_parser, filename, outfile):
                             title = True
                         sbom_document.heading(2, "Performance Metrics")
                         sbom_document.createtable(
-                            ["Type", "Value", "Slice", "Lower BOund", "Upper Bound"],
+                            ["Type", "Value", "Slice", "Lower Bound", "Upper Bound"],
                             [10, 10, 10, 15, 15],
                         )
                         for performance in modelCard["performance"]:
@@ -208,7 +208,7 @@ def generate_document(format, sbom_parser, filename, outfile):
                                     performance[4],
                                 ]
                             )
-                        sbom_document.showtable()
+                        sbom_document.showtable(widths=[3, 3, 2, 3, 3])
                     if "graphics" in modelCard:
                         if not title:
                             sbom_document.heading(1, "Quantitative Analysis")
@@ -219,7 +219,7 @@ def generate_document(format, sbom_parser, filename, outfile):
                         sbom_document.createtable(["Name", "Content"])
                         for image in modelCard["graphics"]["collection"]:
                             sbom_document.addrow([image[0], image[1]])
-                        sbom_document.showtable()
+                        sbom_document.showtable(widths=[5, 9])
 
                     # Considerations
                     title = False
@@ -289,13 +289,13 @@ def generate_document(format, sbom_parser, filename, outfile):
                                 ]
                             )
                     if title:
-                        sbom_document.showtable()
+                        sbom_document.showtable(widths=[5, 9])
                     if "property" in modelCard:
                         # Potentially multiple entries
                         sbom_document.heading(1, "Properties")
                         sbom_document.createtable(["Name", "Value"], [20, 35])
                         for property in modelCard["property"]:
                             sbom_document.addrow([property[0], property[1]])
-                        sbom_document.showtable()
+                        sbom_document.showtable(widths=[5, 9])
 
     sbom_document.publish(outfile)
