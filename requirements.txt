@@ -1,2 +1,2 @@
 lib4sbom >= 0.7.2
-sbom2doc >= 0.4.3
+sbom2doc >= 0.4.5
